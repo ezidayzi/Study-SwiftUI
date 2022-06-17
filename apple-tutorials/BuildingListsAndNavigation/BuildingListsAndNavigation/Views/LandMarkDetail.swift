@@ -16,19 +16,19 @@ struct LandMarkDetail: View {
                 .ignoresSafeArea(edges: .top)
                 .frame(height:300)
             
-            CircleImage(image: Image("turtlerock"))
+            CircleImage(image: landmark.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
             
             VStack(alignment: .leading, spacing: 10) {
-                Text("Turtle Rock")
+                Text(landmark.name)
                     .font(.largeTitle)
                     .foregroundColor(.green)
                 HStack{
-                    Text("Joshua Tree National Park")
+                    Text(landmark.park)
                         .font(.subheadline)
                     Spacer()
-                    Text("California")
+                    Text(landmark.state)
                         .font(.caption)
                 }
                 .font(.subheadline)
@@ -36,10 +36,10 @@ struct LandMarkDetail: View {
                 
                 Divider()
                 
-                Text("About Turtle Rock")
+                Text("About \(landmark.name)")
                     .font(.title2)
                 
-                Text("Descriptive text goes here.")
+                Text(landmark.description)
             }
             .padding()
         }

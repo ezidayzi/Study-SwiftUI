@@ -12,15 +12,16 @@ struct LandmarkList: View {
         /// Lists work with identifiable data
         ///  1)  identifies each element (ex. \.id)
         ///  2)  Identifiable protocol
-        List(landmarks) { landmark in
-            NavigationLink {
-                LandMarkDetail(landmark: landmark)
-            } label: {
-                LandmarkRow(landmark: landmark)
+        NavigationView {
+            List(landmarks) { landmark in
+                NavigationLink {
+                    LandMarkDetail(landmark: landmark)
+                } label: {
+                    LandmarkRow(landmark: landmark)
+                }
             }
-            
+            .navigationTitle("Landmarks")
         }
-        .navigationTitle("Landmarks")
     }
 }
 
